@@ -1,5 +1,5 @@
 <h1>Sistema de Gestão Escolar</h1>
-<p>Projeto final do modúlo Javascript do curso de Fullstack da IT Step Computer Academy.</p>
+<p>Projeto final do modúlo Javascript do curso de full stack da Step Computer Academy.</p>
 
 <h3>Sobre</h3>
 <p>Sistema de gestão escolar com cadastro e consulta de alunos, professores e cursos.</p>
