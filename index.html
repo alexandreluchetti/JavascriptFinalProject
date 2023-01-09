@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Escolar</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css.css/css.css">
+</head>
+
+<body class="bg-light bg-gradient">
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <img src="./img/logo.png" alt="" width="40" height="35" class="d-inline-block align-text-top">
+                <a class="navbar-brand ms-3" onclick="troca('home')">Evolua</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                        <li class="nav-item ps-3">
+                            <a class="nav-link fs-6" aria-current="page" onclick="troca('home')">Home</a>
+                        </li>
+
+                        <li class="nav-item ps-3">
+                            <a class="nav-link fs-6" aria-current="page" onclick="troca('cadastros')">Cadastros</a>
+                        </li>
+
+                        <li class="nav-item ps-3">
+                            <a class="nav-link fs-6" aria-current="page" onclick="troca('consultas')">Consultas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="container">
+
+            <section id="containerHome">
+                <h1 class="text-black-50">Home</h1>
+
+                <hr class="mb-5"/>
+
+                <div class="col mx-auto text-center">
+                    <img src="./img/logo-completo.png" class="img-fluid mt-5" alt="..." width="500" height="auto">
+                    <h6 class="mt-5">Sistema de gestão escolar</h6>
+                </div>
+                </section>
+
+            <section class="displayNone" id="containerCadastros">
+                <h1 class="text-black-50">Cadastros</h1>
+
+                <hr class="mb-5"/>
+
+                <div class="form-group row align-items-center">
+                    <label class="col-md-4 control-label" for="selectTurno">Selecione o cadastro que deseja realizar</label>
+                    <div class="col-md-3">
+                        <select id="selectTipoCadastro" name="selectTurno" class="form-select" onchange="selectCadastro()">
+                            <option selected disabled>Selecione o cadastro que deseja realizar</option>
+                            <option value="alunos">Alunos</option>
+                            <option value="professores">Professores</option>
+                            <option value="cursos">Cursos</option>
+                            <option value="turmas">Turmas</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <h1 class="titulo display-6 fs-3 displayNone" id="tituloCadAlunos">Cadastro de alunos</h1>
+                <h1 class="titulo display-6 fs-3 displayNone" id="tituloCadProf">Cadastro de professores</h1>
+                <h1 class="titulo display-6 fs-3 displayNone" id="tituloCadCursos">Cadastro de cursos</h1>
+                <h1 class="titulo display-6 fs-3 displayNone" id="tituloCadTurmas">Cadastro de turmas</h1>
+
+                <br />
+
+                <form class="form-horizontal" id="divCadAlunoProfessor">
+                    <fieldset>
+        
+                        <div class="form-group row align-items-center" id="cadastroAlunoProfessor">
+                            <label class="col-md-2 control-label" for="inputNome">Nome Completo</label>
+                            <div class="col-md-5">
+                                <input id="inputNome" name="inputNome" type="text" placeholder="Nome Completo"
+                                    class="form-control input-md">
+                            </div>
+                        </div>
+        
+                        <div class="form-group row align-items-center">
+                            <label class="col-md-2 control-label" for="inputIdade">Idade</label>
+                            <div class="col-md-5">
+                                <input id="inputIdade" name="inputIdade" type="number" placeholder="Idade"
+                                    class="form-control input-md" maxlength="2">
+                            </div>
+                        </div>
+        
+                        <div class="form-group row align-items-center">
+                            <label class="col-md-2 control-label" for="inputCpf">CPF</label>
+                            <div class="col-md-5">
+                                <input id="inputCpf" name="inputCpf" type="text" placeholder="CPF" class="form-control input-md"
+                                 oninput="mascara(this)">
+                            </div>
+                        </div>
+        
+                        <div class="form-group row align-items-center">
+                            <label class="col-md-2 control-label" for="inputCelular">Celular</label>
+                            <div class="col-md-5">
+                                <input type="text" placeholder="Celular" id="inputCelular" name="inputCelular"
+                                    class="form-control input-md" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);">
+                            </div>
+                        </div>
+        
+                        <div class="form-group row align-items-center">
+                            <label class="col-md-2 control-label" for="inputEmail">Email</label>
+                            <div class="col-md-5">
+                                <input id="inputEmail" name="inputEmail" type="text" placeholder="Email"
+                                    class="form-control input-md">
+                            </div>
+                        </div>
+        
+                        <div class="form-group row align-items-center">
+                            <label class="col-md-2 control-label" for="inputCidade">Cidade</label>
+                            <div class="col-md-5">
+                                <input id="inputCidade" name="inputCidade" type="text" placeholder="Cidade"
+                                    class="form-control input-md">
+                            </div>
+                        </div>
+
+                        <div class="form-group row align-items-center" id="divInputTurma">
+                            <label class="col-md-2 control-label" for="turmaAluno">Turma - turno</label>
+                            <div class="col-md-5">
+                                <select id="turmaAluno" name="turmaAluno" class="form-select">
+                                    <option selected disabled value="">Selecione uma turma</option>
+
+                                </select>
+                            </div>
+                        </div>
+        
+                    </fieldset>
+                </form>
+        
+                <form class="form-horizontal" id="divCadastroCurso">
+                    <fieldset>
+        
+                        <div class="form-group row align-items-center">
+                            <label class="col-md-2 control-label" for="selectNomeCurso">Nome do curso</label>
+                            <div class="col-md-5">
+                                <select id="selectNomeCurso" name="selectNomeCurso" class="form-select">
+                                    <option selected disabled value="">Selecione um curso</option>
+                                    <option value="Webdesign">Webdesign</option>
+                                    <option value="Front-end">Front-end</option>
+                                    <option value="Back-end">Back-end</option>
+                                    <option value="Marketing digital">Marketing digital</option>
+                                    <option value="JAVA">JAVA</option>
+                                    <option value="JavaScript">JavaScript</option>
+                                    <option value="Python">Python</option>
+                                    <option value="Hardware">Hardware</option>
+                                </select>
+                            </div>
+                            <p class="fs-6 col-md-3 pt-3">Mais cursos em breve...</p>
+                        </div>
+
+                        <div class="form-group row align-items-center">
+                            <label class="col-md-2 control-label" for="selectTurmaCurso">Turma - turno</label>
+                            <div class="col-md-5">
+                                <select id="selectTurmaCurso" name="selectTurmaCurso" class="form-select">
+                                    <option selected disabled value="">Selecione uma turma</option>
+                                    
+                                </select>
+                            </div>
+                        </div>
+        
+                    </fieldset>
+                </form>
+
+                <form class="form-horizontal" id="divCadastroTurma">
+                    <fieldset>
+
+                        <div class="form-group row align-items-center">
+                            <label class="col-md-2 control-label" for="selectNomeTurma">Nome da turma</label>
+                            <div class="col-md-5">
+                                <input id="selectNomeTurma" name="selectNomeTurma" type="text" placeholder="Nome da turma"
+                                    class="form-control input-md">
+                            </div>
+                        </div>
+        
+                        <div class="form-group row align-items-center">
+                            <label class="col-md-2 control-label" for="selectTurnoTurma">Turno</label>
+                            <div class="col-md-5">
+                                <select id="selectTurnoTurma" name="selectTurnoTurma" class="form-select">
+                                    <option selected disabled value="">Selecione um turno</option>
+                                    <option value="Manhã">Manhã</option>
+                                    <option value="Tarde">Tarde</option>
+                                    <option value="Noite">Noite</option>
+                                </select>
+                            </div>
+                        </div>
+        
+                    </fieldset>
+                </form>
+        
+                <div class="form-group row">
+                    <label class="col-md-2 control-label" for="btnCadastrar"></label>
+                    <div class="col-md-5 displayNone marginTop" id="btnForm">
+                        <button id="btnCadastrar" name="btnCadastrar" class="btn btn-success" onclick="cadastrar()">Cadastrar</button>
+                        <button id="btnLimpar" name="btnLimpar" class="btn btn-danger" onclick="limpar()">Limpar</button>
+                    </div>
+                </div>
+
+                <div class="alert alert-success displayNone mt-4 text-center" role="alert" id="alertCadastro">Cadastrado com sucesso!</div>
+            </section>
+
+
+
+
+
+            <section class="displayNone" id="containerConsultas">
+                <h1 class="text-black-50">Consultas</h1>
+
+                <hr class="mb-5"/>
+
+                <section class="mb-5">
+                
+                    <div class="form-group row align-items-center">
+                        <label class="col-md-4 control-label" for="selectTipoConsulta">Selecione a consulta que deseja realizar</label>
+                        <div class="col-md-4">
+                            <select id="selectTipoConsulta" name="selectTipoConsulta" class="form-select" onchange="selectConsulta()">
+                                <option selected disabled value="">Selecione a consulta que deseja realizar</option>
+                                <option value="Alunos">Alunos</option>
+                                <option value="Professores">Professores</option>
+                                <option value="Cursos">Cursos</option>
+                                <option value="Turmas">Turmas</option>
+                                <option value="Geral">Geral</option>
+                            </select>
+                        </div>
+                
+                        <div class="col-md-4 displayNone" id="divBtnExibirProfessores">
+                            <button id="btnExibirProfessores" name="btnExibirProfessores" class="btn btn-success"
+                                onclick="exibir('professores')">Exibir</button>
+                        </div>
+                
+                        <div class="col-md-4 displayNone" id="divBtnExibirCursos">
+                            <button id="btnExibirCursos" name="btnExibirCursos" class="btn btn-success"
+                                onclick="exibir('cursos')">Exibir</button>
+                        </div>
+                
+                        <div class="col-md-4 displayNone" id="divBtnExibirGeral">
+                            <button id="btnExibirGeral" name="btnExibirGeral" class="btn btn-success"
+                                onclick="exibir('geral')">Exibir</button>
+                        </div>
+                    </div>
+                
+                    <div class="form-group row align-items-center displayNone" id="divConsultaAlunos">
+                        <label class="col-md-4 control-label" for="selectConsultaAlunos">Selecione o relatório que deseja
+                            acessar</label>
+                        <div class="col-md-4">
+                            <select id="selectConsultaAlunos" name="selectConsultaAlunos" class="form-select">
+                                <option selected disabled value="">Selecione o relatório que deseja acessar</option>
+                                <option value="Todos">Todos os alunos</option>
+                                <option value="Maiores">Maiores de idade</option>
+                                <option value="Menores">Menores de idade</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4" id="">
+                            <button id="btnExibirAlunos" name="btnExibirAlunos" class="btn btn-success"
+                                onclick="exibir('alunos')">Exibir</button>
+                        </div>
+                    </div>
+                
+                    <div class="form-group row align-items-center displayNone" id="divConsultaTurmas">
+                        <label class="col-md-4 control-label" for="selectConsultaTurmas">Selecione o relatório que deseja
+                            acessar</label>
+                        <div class="col-md-4">
+                            <select id="selectConsultaTurmas" name="selectConsultaTurmas" class="form-select">
+                                <option selected disabled value="">Selecione o relatório que deseja acessar</option>
+                                <option value="todas">Todas as turmas</option>
+                                <option value="manhã">Turmas da manhã</option>
+                                <option value="tarde">Turmas da tarde</option>
+                                <option value="noite">Turmas da noite</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4" id="divBtnExibirTurma">
+                            <button id="btnExibirTurma" name="btnExibirTurma" class="btn btn-success"
+                                onclick="exibir('turmas')">Exibir</button>
+                        </div>
+                    </div>
+                </section>
+    
+                <h2 class="displayNone" id="tituloConsultaAlunos">Alunos</h2>
+                <table class="table table-hover displayNone mb-5" id="tabelaConsultaAlunos">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome completo</th>
+                            <th scope="col">Idade</th>
+                            <th scope="col">CPF</th>
+                            <th scope="col">Celular</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Cidade</th>
+                            <th scope="col">Turma</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaConsultaAlunos"></tbody>
+                </table>
+
+                <h2 class="displayNone" id="tituloConsultaProfessores">Professores</h2>
+                <table class="table table-hover displayNone mb-5" id="tabelaConsultaProfessores">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome completo</th>
+                            <th scope="col">Idade</th>
+                            <th scope="col">CPF</th>
+                            <th scope="col">Celular</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Cidade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaConsultaProfessores"></tbody>
+                </table>
+
+                <h2 class="displayNone" id="tituloConsultaCursos">Cursos</h2>
+                <table class="table table-hover displayNone mb-5" id="tabelaConsultaCursos">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome do curso</th>
+                            <th scope="col">Turma</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaConsultaCursos"></tbody>
+                </table>
+
+                <h2 class="displayNone" id="tituloConsultaTurmas">Turmas</h2>
+                <table class="table table-hover displayNone mb-5" id="tabelaConsultaTurmas">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Turma</th>
+                            <th scope="col">Turno</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaConsultaTurmas"></tbody>
+                </table>
+
+            </section>
+        </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/aluno.js"></script>
+    <script src="./js/professores.js"></script>
+    <script src="./js/cursos.js"></script>
+    <script src="./js/turmas.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+header{
+    margin-bottom: 30px;
+}
+
+.titulo{
+    margin-top: 30px;
+}
+
+main input, select{
+    margin: 5px 0 5px 0;
+}
+
+label{
+    font-weight: bolder;
+}
+
+.marginTop{
+    margin-top: 20px;
+}
+
+form, .displayNone{
+    display: none;
+}
