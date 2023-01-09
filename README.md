@@ -8,12 +8,12 @@
 <p>Atestar e solidificar o aprendizado adquirido durante o modúlo de Javascript, HTML5, CSS3 (Bootstrap).</p>
 
 <h4>Estrutura:</h4>
-<p>Home (navbar para acessar as telas do sistema)</p>
-<p>Cadastro</p>
+<p><i>Home</i> (navbar para acessar as telas do sistema)</p>
+<p><i>Cadastro</i></p>
         <li>Alunos</li>
         <li>Professores</li>
         <li>Cursos (webdesing, back-end, marketing digital e etc)</li></br>
-<p>Consultas</p>
+<p><i>Consultas</i></p>
         <p>Alunos</p>
             <li>Todos os Alunos</li>
             <li>Maiores de idade</li>
