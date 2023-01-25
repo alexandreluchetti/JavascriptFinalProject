@@ -1,5 +1,6 @@
 <h1>Sistema de Gestão Escolar</h1>
 <p>Projeto final do modúlo Javascript do curso de full stack da Step Computer Academy.</p>
+<p><a href="https://alexandreluchetti.github.io/JavascriptFinalProject/">Clique aqui</a> para abrir o projeto no seu navegador.</p>
 
 <h3>Sobre</h3>
 <p>Sistema de gestão escolar com cadastro e consulta de alunos, professores e cursos.</p>
